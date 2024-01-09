@@ -94,3 +94,8 @@ def soma(x):
 k1 = np.array([1, 2, 3])
 
 k2 = [1, 2, 4]
+
+soma(k1)
+
+# Observação: quando shift+enter não estiver lendo a proxima linha, excluir a
+# pasta .vscode
