@@ -81,3 +81,16 @@ z[:2]
 matriz[:,0]
 # selecionar a seguna linha
 matriz[1,:]
+
+# Função soma
+def soma(x):
+  n = len(x)
+  y = 0
+  for i in range(n):
+    y = y + x[i]
+    i += 1
+  return y
+
+k1 = np.array([1, 2, 3])
+
+k2 = [1, 2, 4]
