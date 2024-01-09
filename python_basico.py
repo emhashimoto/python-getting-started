@@ -1,13 +1,13 @@
 # Objetivo: aprender os comandos básicos em python
 
-# lista
+# lista de string
 frutas = ["morango", "pera", "melancia"]
 print(frutas)
 
-# vetor numerico
+# lisa de inteiros
 x = [10, 2, 3]
 print(x)
-x[0]
+x[0] # pyhton começa a contagem do 0
 
 # Variavel global
 y = "awesome"
@@ -51,5 +51,33 @@ math.exp(2)
 
 import numpy as np
 
-np.abs(-20)
+# Vetor como uma linha
+vl = np.array([1, 2, 3])
+print(vl)
+vl[1]
 
+# Vetor como coluna
+vc = np.array([[1],
+               [2],
+               [3]])
+print(vc)
+vc[1,0]
+
+# Matriz
+matriz = np.array([[1, 2],
+                   [1, 4],
+                   [1, 2]])
+
+print(matriz)
+matriz[1,1]
+
+# selecao de elementos
+z = np.array([10,20,30,40,50])
+# selecionar elementos a partir do terceiro elementos
+z[2:]
+# selecionar os dois primeiros elementos
+z[:2]
+# selecionar a primeira coluna
+matriz[:,0]
+# selecionar a seguna linha
+matriz[1,:]
