@@ -20,5 +20,3 @@ root = optimize.newton(f, 10, rtol=0.05, fprime=fl)
 print(round(root, 8))
 
 optimize.newton(f, 10, rtol=0.05, fprime=fl,full_output=True)
-
-
