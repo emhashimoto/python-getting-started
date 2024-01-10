@@ -20,3 +20,5 @@ root = optimize.newton(f, 10, rtol=0.05, fprime=fl)
 print(round(root, 8))
 
 optimize.newton(f, 10, rtol=0.05, fprime=fl,full_output=True)
+
+optimize.root_scalar(f, method='newton', x0=10, fprime=fl, rtol=0.05)

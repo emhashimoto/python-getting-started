@@ -11,7 +11,6 @@ def f(t):
   return y
 
 # Método da secante
-root = optimize.newton(f, 10, fprime=None, rtol=0.05)
-print(round(root, 8))
+optimize.newton(f, x0=10, x1=11, rtol=0.05, full_output=True)
 
-optimize.newton(f, 10, rtol=0.05,full_output=True)
+optimize.root_scalar(f, method='secant', x0=10, x1=11, rtol=0.05)
