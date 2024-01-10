@@ -20,3 +20,4 @@ def logvero(theta,x):
   return -lv
 
 out = optimize.minimize(logvero, 1, args=(x), method='bfgs')
+print(out)
