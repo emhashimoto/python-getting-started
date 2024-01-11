@@ -4,26 +4,20 @@
 import numpy as np
 import math
 from scipy import optimize
+import sys
 
-
-# Gerar dados
+# Gerar dadosS
 x = np.random.normal(10,1,100)
 
 # Logartimo da função de verossimilhança
 def logvero(theta,x):
   n = len(x)
-  mu, s2 = theta
-  lv = 0
-  for i in range(n):
-    soma = -(0.5*math.log(2*math.pi*s2))-((1/(2*s2))*(x[i]-mu)**2)
-    lv = lv + soma
+  mu = theta[0]
+  s2 = theta[1]
+  soma = sum((x-mu)**2)
+  lv = -((n/2)*math.log(2*math.pi))-((n/2)*math.log(s2))-(soma/(2*s2))
   return -lv
 
-theta0 = np.array([10,1])
-out = optimize.minimize(logvero, theta0, args=(x), method='bfgs', options={'disp': True})
+theta0 = [10, 1]
+out = optimize.minimize(logvero, theta0, args=(x), method='bfgs')
 print(out)
-
-theta01 = np.array([1,1])
-cons = ((None, None), (0, None))
-out1 = optimize.minimize(logvero, theta01, args=(x), method='SLSQP', options={'disp': True},
-                         constraints=cons)
