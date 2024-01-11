@@ -5,6 +5,7 @@ import numpy as np
 import math
 from scipy import optimize
 import statistics as stat
+import pandas as pd
 
 # Número de simulações
 r = 5
@@ -14,6 +15,7 @@ n = 100
 vmu = np.zeros(r)
 vs = np.zeros(r)
 
+# Logaritmo da função de verossimilhança
 def logvero(theta,x):
   mu = theta[0]
   s = theta[1]
@@ -25,6 +27,7 @@ j = 0
 while j < r:
   # Gerar dados
   x = np.random.normal(10,2,n)
+  # Estimativas
   theta0 = [0.1, 0.1]
   out = optimize.minimize(logvero, theta0, args=(x), method='bfgs')
   if out.success == True:
@@ -39,5 +42,12 @@ while j < r:
   else:
     j += j
 
+# Estimativas médias
 stat.mean(vmu)
 stat.mean(vs)
+
+# Exportar os resultados
+theta = {'mi': vmu,
+         'sigma': vs}
+df = pd.DataFrame(theta)
+df.to_excel('theta.xlsx', index=False)
