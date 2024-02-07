@@ -1,0 +1,14 @@
+P1: criar uma pasta (folder)
+P2: Abrir o vscode
+P3: Clicar em explorer (barra lateral à esquerda)
+P4: Clicar em open folder
+P5: Selecionar a pasta criada no passo 1
+P6: Depois de ter criado o conteúdo da pasta, clicar em source control (barra lateral à esquerda)
+P7: Clicar em initialize repository
+P8: Na caixa message digite uma mensagem (curta) que descreve as alterações feita
+P9: Clicar em commit
+P10: Na caixa de mensagem clicar em yes
+P11: Clicar em publish branch
+P12: Escolher o repositório público ou privado
+P13: Clicar em open on github
+P14: Entrar com o login e senha do github, se for pedido.
